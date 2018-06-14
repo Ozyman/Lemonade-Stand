@@ -57,12 +57,16 @@ class LemonadeStand:
         self.lemons -= math.ceil(cups_sold/2)
         self.money += cups_sold * lemonade_price
         
-        print "You sold {} cups of lemonade\n\n".format(cups_sold)
+        print("You sold {} cups of lemonade\n\n").format(cups_sold)
         
         
 def main():
-    ls = LemonadeStand("Paul")
-    max_days = 10
+    name = input("What is your Name? ")
+    print("\n")
+    max_days = int(input("How many Days do you want to run your lemonade stand? "))
+    print("\n")
+
+    ls = LemonadeStand(name)
     for day in range(max_days):
         ls.display_state()
         print("DAY: {} of {}".format(day+1, max_days))
